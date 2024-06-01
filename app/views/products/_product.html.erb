@@ -1,0 +1,19 @@
+<div id="<%= dom_id product %>">
+  <div class="card shadow rounded">
+    <div class="card-img-top" style="background-image: url(<%= product.image %>); height: 200px; background-size: full;">        
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">
+        <%= product.name %>
+      </h5>
+      <p class="card-text">
+        <%= product.description %>
+      </p>
+      <div class="d-flex justify-content-end">
+        <h6 class="card-subtitle mb-2 text-muted">
+          € <%= product.price %>
+        </h6>
+      </div>
+    </div>
+  </div>
+</div>
