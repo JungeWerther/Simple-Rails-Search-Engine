@@ -1,4 +1,4 @@
-# Chat with your products
+# Natural Language Product Search
 1. Make sure you have exported OPENAI_API_KEY as environment variable.
 1. Make sure you have sqlite, ruby, bundler installed (see standard Rails installation)
 1. Run ```bundle install```
