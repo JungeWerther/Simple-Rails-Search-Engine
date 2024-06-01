@@ -1,0 +1,18 @@
+<%= form_with url: '/chat/search', method: 'post', local: true, class: 'form-inline' do %>
+  <div class="form-group d-flex col my-4 gap-2">
+    <%= text_field_tag :query, nil, placeholder: "Search", class: 'form-control mr-2' %>
+    <%= submit_tag "Search", class: 'btn btn-primary' %>
+  </div>
+<% end %>
+
+<% if @results %>
+  <h2>Results:</h2>
+  <div id="products" class="row flex-wrap">
+    <% @results.each do |result| %>
+      <div class="col-md-6 my-1">
+
+      <p><%= render result %></p>
+      </div>
+    <% end %>
+  </div>
+<% end %>

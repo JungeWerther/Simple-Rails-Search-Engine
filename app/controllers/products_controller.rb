@@ -1,3 +1,5 @@
+require_relative '../../app/services/Embeddings.rb'
+
 class ProductsController < ApplicationController
   before_action :set_product, only: %i[ show edit update destroy ]
 
@@ -32,6 +34,8 @@ class ProductsController < ApplicationController
         format.json { render json: @product.errors, status: :unprocessable_entity }
       end
     end
+
+    EmbeddingsService.new.create_index
   end
 
   # PATCH/PUT /products/1 or /products/1.json
@@ -55,6 +59,8 @@ class ProductsController < ApplicationController
       format.html { redirect_to products_url, notice: "Product was successfully destroyed." }
       format.json { head :no_content }
     end
+
+    EmbeddingsService.new.create_index
   end
 
   private
